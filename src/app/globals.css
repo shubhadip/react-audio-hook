@@ -7,12 +7,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* @media (prefers-color-scheme: dark) {
+  ## :root {
+    ## --background: #0a0a0a;
+    ## --foreground: #ededed;
+    ##  }
+} */
 
 body {
   color: var(--foreground);
@@ -23,5 +23,45 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+  border-radius: 16px;
+  gap: 32px;
+}
+
+input {
+  border: 1px solid #efefef;
+  border-radius: 4px;
+  padding: 8px ;
+  width: 240px;
+  outline: none;
+}
+
+.mic {
+  padding: 4px;
+  border: 1px solid;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #0000001a;
+  display: flex;
+  flex-direction: column;
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
   }
 }
