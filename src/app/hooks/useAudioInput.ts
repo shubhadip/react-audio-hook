@@ -115,10 +115,9 @@ function useAudioInput(config: Config = defaultConfig) {
 
     }
 
-    const startRecording = async () => {
+    const startRecording = () => {
         setIsRecording(true);
-
-        await navigator.mediaDevices
+        navigator.mediaDevices
             .getUserMedia({
                 audio: config.audio
             })
